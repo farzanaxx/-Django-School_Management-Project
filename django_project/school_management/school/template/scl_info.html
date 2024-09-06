@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Information</title>
+</head>
+<body>
+<h1> Add Information </h1>
+
+
+<form method="post">
+    {% csrf_token %}
+    {{forms.as_p}}
+
+ <button type="submit">{%if forms.instance.id%}Update{%else %}Create{%endif%}</button>
+</form>
+<a href="{%url 'school_list' %}"> back to list</a>
+</body>
+</html>
+
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>School Information</title>
+</head>
+<body>
+<h1> School Information </h1>
+  <a href="{% url 'scl_info'%}">Add information</a>
+<ul>
+    {% for scl_info in school %}
+    <li>
+        <p>{{scl_info.name}}</p>
+        <a href="{%url 'scl_details' scl_info.id%}">Edit</a> |
+        <a href="{%url 'scl_delete'  scl_info.id%}">Delete</a> |
+
+    </li>
+    {% endfor %}
+
+</ul>
+</body>
+</html>
